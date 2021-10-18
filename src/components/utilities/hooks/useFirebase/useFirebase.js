@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import initializeAuthentication from "../../firebase/firebase.init";
 import {
     getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, GithubAuthProvider, signOut,
-    createUserWithEmailAndPassword, updateProfile, sendEmailVerification
+    createUserWithEmailAndPassword, updateProfile, sendEmailVerification, signInWithEmailAndPassword
 } from "firebase/auth";
 
 
@@ -143,7 +143,8 @@ const useFirebase = () => {
                         setUserName('');
                         setUserEmail('');
                         setUserPassword('')
-                        setError('We send verification mail');
+                        setError('');
+                        setUserConfirmPassword('')
                     })
 
             })
@@ -157,6 +158,23 @@ const useFirebase = () => {
                 }
                 if (invalid === "invalid-email") {
                     return setError('Please write valid email')
+                }
+            })
+    }
+    const handleLogin = e => {
+        e.preventDefault();
+        signInWithEmailAndPassword(auth, userEmail, userPassword)
+            .then(result => {
+
+            }).catch(error => {
+                const errorMessage = error.message;
+                const notFound = errorMessage.slice(22, 36);
+                const invalid = errorMessage.slice(22, 35);
+                if (notFound === "user-not-found") {
+                    setError("User not found")
+                }
+                if (invalid === "invalid-email") {
+                    setError("Write valid email address")
                 }
             })
     }
@@ -175,7 +193,8 @@ const useFirebase = () => {
         getUserPassword,
         passwordError,
         handleSignIn,
-        error
+        error,
+        handleLogin
     }
 }
 export default useFirebase;
