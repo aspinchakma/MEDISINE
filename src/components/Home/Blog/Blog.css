@@ -6,9 +6,26 @@
     border: 1px solid #e10128;
 }
 .single-blog{
+    border: none;
 cursor: pointer;
+box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+}
+.single-blog:hover{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: all .3s ease-in-out;
+}
+.img-container{
+    overflow: hidden;
 }
 .author{
     font-size: 1rem;
     color: rgb(116, 116, 240);
+}
+.author:hover{
+    color: blue;
+}
+.single-blog:hover img{
+    transform:scale(1.028);
+    transition:  all .5s ease-in-out;
 }
