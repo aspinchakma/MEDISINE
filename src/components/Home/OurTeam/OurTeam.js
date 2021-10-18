@@ -3,7 +3,7 @@ import './OurTeam.css';
 
 const OurTeam = () => {
     return (
-        <div className="container team-container">
+        <div className="container team-container mb-4">
             <h2 className="text-center py-3">Meet Our Team</h2>
             <div className="row row-cols-1 row-cols-md-2 g-4">
                 <div className="col ">

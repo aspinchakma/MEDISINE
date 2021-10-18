@@ -38,3 +38,11 @@
     color: blue;
     text-decoration: underline;
 }
+.error-password-Message{
+    border:1px solid white;
+    font-size: .9rem;
+    height: 1.2rem;
+    text-align: center;
+    color:red;
+    font-weight: 500;
+}
