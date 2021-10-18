@@ -1,0 +1,33 @@
+.banner-container{
+    background-image: url('https://i.ibb.co/9wHWQJ8/banner-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 12rem 0rem 12rem 0rem;
+    line-height: 2rem;
+}
+.banner-details{
+    font-size: 1.6rem;
+}
+.banner-buy-button{
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    padding: 7px 20px 7px 20px;
+    font-size: 1.2rem;
+    border:1px solid white;
+    font-weight: 500;
+}
+.main-header{
+    font-size: 4rem;
+    color: white;
+}
+.main-header span{
+    color: #e8d21d;
+}
+.banner-buy-button:hover{
+    border: 1px solid #077b8a;
+    background-color: #077b8a;
+    color: white;
+    transition: all .3s ease-in-out;
+}

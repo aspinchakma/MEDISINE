@@ -1,0 +1,20 @@
+.category p{
+    font-size: 1.2rem;
+    
+}
+.category{
+    cursor: pointer;
+    border-right: 1px solid #e4e4e4;
+}
+.category:last-child{
+    
+    border-right: none;
+}
+.category:hover{
+    color: blue;
+}
+.category-container{
+    border-radius: 10px;
+    overflow: hidden;
+    border:1px solid #e4e4e4
+}

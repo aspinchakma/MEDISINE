@@ -1,0 +1,14 @@
+.blog-button{
+    width: 40%;
+    border: 1px solid #e10128;
+}
+.blog-button:hover{
+    border: 1px solid #e10128;
+}
+.single-blog{
+cursor: pointer;
+}
+.author{
+    font-size: 1rem;
+    color: rgb(116, 116, 240);
+}

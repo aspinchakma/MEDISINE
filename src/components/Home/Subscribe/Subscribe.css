@@ -1,0 +1,32 @@
+.subscribe-container{
+    background-image: url('https://prestashop.mahardhi.com/MT04/vorexo/themes/vorexo/assets/img/bbb1fab80b7619bb82e56a07e5aafab3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.email-container{
+    width: 40%;
+    margin: auto;
+}
+.email-container input{
+    width: 75%;
+    padding: .7rem;
+    outline: none;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    color: red;
+}
+.email-container button{
+    padding: .7rem;
+    margin-left: -.5rem;
+    background-color: #076cec;
+    color: white;
+    font-weight: 600;
+    border:1px solid  #076cec;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.email-container button:hover{
+    background-color: white;
+    color: #076cec;
+    transition: all .3s ease-in-out;
+}

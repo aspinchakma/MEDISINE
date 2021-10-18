@@ -1,10 +1,20 @@
 import React from 'react';
-import Header from '../Header/Header';
+import Banner from '../Banner/Banner';
+import Blogs from '../Blogs/Blogs';
+import Offer from '../Offer/Offer';
+import Others from '../Others/Others';
+import Products from '../Products/Products';
+import Subscribe from '../Subscribe/Subscribe';
 
 const HomeContainer = () => {
     return (
         <div>
-            <Header></Header>
+            <Banner></Banner>
+            <Offer></Offer>
+            <Products></Products>
+            <Others></Others>
+            <Blogs></Blogs>
+            <Subscribe></Subscribe>
         </div>
     );
 };

@@ -1,0 +1,40 @@
+.offer-one{
+    background-image: url('https://prestashop.mahardhi.com/MT04/vorexo/modules/mt_customhtml/img/banner-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.offer-two{
+    background-image: url('https://prestashop.mahardhi.com/MT04/vorexo/modules/mt_customhtml/img/banner-2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.offer-three{
+    background-image: url('https://prestashop.mahardhi.com/MT04/vorexo/modules/mt_customhtml/img/banner-3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.offer-three:hover, .offer-one:hover, .offer-two:hover{
+    transform: translateY(-7px);
+    transition: all .35s ease-in-out;
+}
+
+.shop-now-button-others{
+    width: 30%;
+    border: none;
+    background-color: #e10128;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    padding: 7px 11px 7px 11px;
+}
+.shop-now-button-others:hover{
+    background-color: white;
+    color: #e10128;
+    transition: all .3s ease-in-out;
+}

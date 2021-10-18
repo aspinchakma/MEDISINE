@@ -1,0 +1,43 @@
+.sanitizers-offer{
+    background-image: url('https://i.ibb.co/S74vxhH/feature-img-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.sanitizers-offer:hover{
+    transform: translateX(-5px);
+    transition: all .4s ease-in-out;
+}
+.shop-now-button{
+    background-color: #076cec;
+    border-radius: 30px;
+    padding: 7px 28px 7px 28px;
+    font-size: 1.1rem;
+    color: white;
+    border: none;
+}
+.sell-title{
+    color: white;
+}
+.shop-now-button:hover{
+    background-color: rgb(91,209, 215);
+    transition: all .4s ease-in-out;
+}
+
+.gears-offer{
+    background-image: url('https://i.ibb.co/09520YQ/feature-img-2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: right;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.gears-sell-title{
+    color: #076cec;
+}
+.gears-offer:hover{
+    transform: translateX(5px);
+    transition: all .3s ease-in-out;
+    
+}
