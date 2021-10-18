@@ -22,8 +22,8 @@ const Header = () => {
                                 Hello: <span>Mark Otto</span>
                             </Navbar.Text>
                         </Nav>
-                        <NavLink to="signUp"><button className="common-button me-2">Sign Up</button></NavLink>
-                        <button className="common-button">Sign In</button>
+                        <NavLink to="/signUp"><button className="common-button me-2">Sign Up</button></NavLink>
+                        <NavLink to="/signIn"><button className="common-button">Sign In</button></NavLink>
                         <button className="common-button">Log out</button>
 
                     </Navbar.Collapse>

@@ -1,0 +1,18 @@
+.sign-in-mini-container{
+    display: flex;
+    justify-content: space-between;
+}
+.or{
+    font-weight: 600;
+    text-align: center;
+}
+.sign-in-mini-container-methods{
+    text-align: center;
+}
+.common-img{
+    width: 2.6rem;
+    cursor: pointer;
+}
+.common-img:hover{
+    opacity: .7;
+}

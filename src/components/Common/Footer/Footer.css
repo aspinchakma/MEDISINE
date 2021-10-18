@@ -3,7 +3,9 @@
     font-weight: 700;
     color:#d9138a;
 }
-
+.footer-container{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
 .footer-container p:hover{
     color:blue;
     cursor: pointer;

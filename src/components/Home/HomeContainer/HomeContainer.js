@@ -14,8 +14,8 @@ const HomeContainer = () => {
             <Banner></Banner>
             <Offer></Offer>
             <Products></Products>
-            <OurTeam></OurTeam>
             <Blogs></Blogs>
+            <OurTeam></OurTeam>
             <Others></Others>
             <Subscribe></Subscribe>
             <CompanyLogo></CompanyLogo>

@@ -1,0 +1,40 @@
+.common-header-form{
+    font-size: 2rem;
+    color: #26495c;
+    font-weight: 600;
+}
+.common-form input{
+    width: 100%;
+    padding: .6rem;
+    outline: none;
+    border-radius:5px ;
+    border: 1px solid #077b8a;
+}
+.common-form input:focus{
+    color: #5c3c92;
+}
+.common-form button{
+    width: 100%;
+    padding:0.6rem 0rem;
+    border: 1px solid #d72631;
+    background: #d72631;
+    font-weight: 600;
+    color: white;
+    border-radius: 5px;
+}
+.common-form button:hover{
+    background-color: white;
+    color: #d72631;
+    transition: all .2s ease-in-out;
+}
+.have-account{
+    text-align: center;
+    cursor: pointer;
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+}
+.have-account:hover{
+    color: blue;
+    text-decoration: underline;
+}

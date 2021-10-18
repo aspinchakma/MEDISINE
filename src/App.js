@@ -3,6 +3,7 @@ import Footer from './components/Common/Footer/Footer';
 import Header from './components/Common/Header/Header';
 import HomeContainer from './components/Home/HomeContainer/HomeContainer';
 import NotFound from './components/NotFound/NotFound'
+import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignUp/SignUp';
 import AuthProvider from './components/utilities/AuthProvider/AuthProvider';
 
@@ -21,6 +22,9 @@ function App() {
             </Route>
             <Route path="/signUp">
               <SignUp></SignUp>
+            </Route>
+            <Route path="/signIn">
+              <SignIn></SignIn>
             </Route>
             <Route path="*">
               <NotFound></NotFound>
