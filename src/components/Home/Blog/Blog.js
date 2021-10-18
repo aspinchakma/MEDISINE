@@ -14,7 +14,7 @@ const Blog = ({ blog }) => {
                         <h5 className="card-title">{title}</h5>
                         <p className="mb-1 author">{author}</p>
                         <p className="card-text">{description.slice(0, 200)}</p>
-                        <button className="shop-now-button-others blog-button">READ MORE</button>
+                        <button className="blog-button">READ MORE</button>
                     </div>
                 </div>
             </div>

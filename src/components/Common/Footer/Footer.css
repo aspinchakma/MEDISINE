@@ -1,0 +1,11 @@
+.footer-container h4{
+    font-size: 1.3rem;
+    font-weight: 700;
+    color:#d9138a;
+}
+
+.footer-container p:hover{
+    color:blue;
+    cursor: pointer;
+    text-decoration: underline;
+}

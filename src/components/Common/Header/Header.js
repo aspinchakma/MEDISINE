@@ -1,15 +1,14 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import useAuth from '../../utilities/hooks/useAuth/useAuth';
 import './Headder.css'
 
 const Header = () => {
     return (
-        <div>
-            <Navbar bg="light" expand="lg">
+        <div className="navbar-for-main">
+            <Navbar bg="white" expand="lg">
                 <Container>
-                    <Navbar.Brand as={NavLink} to="/home">Navbar scroll</Navbar.Brand>
+                    <Navbar.Brand as={NavLink} to="/home"><img src="https://i.ibb.co/25Z49VP/Logo13.png" alt="" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav className="ms-auto">
@@ -23,7 +22,7 @@ const Header = () => {
                                 Hello: <span>Mark Otto</span>
                             </Navbar.Text>
                         </Nav>
-                        <button className="common-button me-2">Sign Up</button>
+                        <NavLink to="signUp"><button className="common-button me-2">Sign Up</button></NavLink>
                         <button className="common-button">Sign In</button>
                         <button className="common-button">Log out</button>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Spinner } from 'react-bootstrap';
 import useAuth from '../../utilities/hooks/useAuth/useAuth'
 import Blog from '../Blog/Blog';
 
@@ -9,11 +10,15 @@ const Blogs = () => {
 
         <div className="container my-5">
             <h2 className="text-center mb-4">Our Blogs</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div className="row row-cols-1 row-cols-md-3 g-4">
                 {
-                    blogsForHome.length && blogsForHome?.map(blog => <Blog key={blog.id} blog={blog}></Blog>)
+                    blogsForHome[0] !== undefined ? blogsForHome.map(blog => <Blog key={blog.id} blog={blog}></Blog>)
+                        :
+
+                        <Spinner animation="grow" variant="primary" />
                 }
             </div>
+
         </div>
     );
 };

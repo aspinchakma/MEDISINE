@@ -1,9 +1,17 @@
 .blog-button{
     width: 40%;
     border: 1px solid #e10128;
+    background-color: #e10128;
+    color: white;
+    padding: 8px 18px 8px 18px;
+    font-weight: 500;
+    border-radius: 5px;
 }
 .blog-button:hover{
-    border: 1px solid #e10128;
+    background-color: white;
+    color: #e10128;
+    transition: all .2s ease-in-out;
+    
 }
 .single-blog{
     border: none;

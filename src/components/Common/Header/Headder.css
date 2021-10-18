@@ -11,3 +11,8 @@
     color: #d72631;
     transition: all .3s ease-in-out;
 }
+.navbar-for-main{
+   box-shadow:  0 10px 10px -10px rgb(0 0 0 / 10%);
+   background-color: white;
+   padding-bottom: 0.8rem;
+}
