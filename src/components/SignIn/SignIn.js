@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../utilities/hooks/useAuth/useAuth';
 import './SignIn.css';
 
 const SignIn = () => {
+    const { signInWithGoogle, signInWithGithub } = useAuth();
     return (
         <div className="container mt-5 pb-5">
             <h3 className="text-center common-header-form">SIGN IN</h3>
@@ -22,8 +24,8 @@ const SignIn = () => {
                     </form>
                     <p className="or">OR</p>
                     <div className="sign-in-mini-container-methods">
-                        <img className="ms-3 common-img" src="https://img.icons8.com/fluency/50/000000/google-logo.png" alt="" />
-                        <img className="ms-3 common-img" src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="" />
+                        <img onClick={signInWithGoogle} className="ms-3 common-img" src="https://img.icons8.com/fluency/50/000000/google-logo.png" alt="" />
+                        <img onClick={signInWithGithub} className="ms-3 common-img" src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="" />
                     </div>
                 </div>
 

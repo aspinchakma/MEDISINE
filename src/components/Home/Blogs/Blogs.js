@@ -5,7 +5,6 @@ import Blog from '../Blog/Blog';
 
 const Blogs = () => {
     const { blogsForHome } = useAuth();
-    console.log(blogsForHome)
     return (
 
         <div className="container my-5">

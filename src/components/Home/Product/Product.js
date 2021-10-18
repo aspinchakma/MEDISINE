@@ -6,8 +6,8 @@ import Rating from '@mui/material/Rating';
 const Product = ({ product }) => {
     const { img, name, price, rating, productType } = product;
     return (
-        <div class="col">
-            <div class="card product-container px-4 py-3">
+        <div className="col">
+            <div className="card product-container px-4 py-3">
                 <img className="mb-2" src={img} alt="" />
                 <div className="product-detail">
                     <p className="productType">{productType}</p>

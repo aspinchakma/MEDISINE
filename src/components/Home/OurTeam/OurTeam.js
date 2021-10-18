@@ -16,10 +16,10 @@ const OurTeam = () => {
                             <p className="team-position">MANAGER</p>
                             <p className="under-line"></p>
                             <div className="icon-container">
-                                <i class="fab fa-facebook-square"></i>
-                                <i class="fab fa-twitter"></i>
-                                <i class="fab fa-instagram"></i>
-                                <i class="fab fa-skype"></i>
+                                <i className="fab fa-facebook-square"></i>
+                                <i className="fab fa-twitter"></i>
+                                <i className="fab fa-instagram"></i>
+                                <i className="fab fa-skype"></i>
                             </div>
                         </div>
                     </div>
@@ -34,10 +34,10 @@ const OurTeam = () => {
                             <p className="team-position">PHARMACIST</p>
                             <p className="under-line"></p>
                             <div className="icon-container">
-                                <i class="fab fa-facebook-square"></i>
-                                <i class="fab fa-twitter"></i>
-                                <i class="fab fa-instagram"></i>
-                                <i class="fab fa-skype"></i>
+                                <i className="fab fa-facebook-square"></i>
+                                <i className="fab fa-twitter"></i>
+                                <i className="fab fa-instagram"></i>
+                                <i className="fab fa-skype"></i>
                             </div>
                         </div>
                     </div>
