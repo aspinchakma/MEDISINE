@@ -5,7 +5,6 @@ import useAuth from '../utilities/hooks/useAuth/useAuth';
 
 const BlogPage = () => {
     const { blogs } = useAuth();
-    console.log(blogs)
     return (
         <div className="container pt-3 pb-5">
             <h2 className="text-center mb-4">Our Blogs</h2>

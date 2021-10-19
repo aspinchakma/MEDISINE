@@ -18,7 +18,6 @@ const Details = () => {
             setQuantity(quantity - 1)
         }
     }
-    console.log(product)
 
     return (
         <div className="container py-4 px-4 my-5">
