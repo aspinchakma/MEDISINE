@@ -4,42 +4,55 @@ import useAuth from '../utilities/hooks/useAuth/useAuth';
 import './SignIn.css';
 
 const SignIn = () => {
-    const { signInWithGoogle, signInWithGithub, error, getUserEmail, getUserPassword, handleLogin, forgetPassword, setUser, setError } = useAuth();
+    const { signInWithGoogle, signInWithGithub, error, getUserEmail, getUserPassword, handleLogin, forgetPassword, setUser, setError, setIsLoading } = useAuth();
     const history = useHistory();
     const location = useLocation();
     const redirect_url = location.state?.from || './home';
 
     const handleLogInWithGoogle = () => {
+        setIsLoading(true);
         signInWithGoogle()
             .then(result => {
                 const user = result.user;
-                setUser(user)
+                setUser(user);
+                setIsLoading(false)
                 history.push(redirect_url)
 
             }).catch(error => {
                 const errorMessage = error.message;
                 setError(errorMessage)
+                setIsLoading(false)
             })
+
     }
     const handleLogInWithGithub = () => {
+        setIsLoading(true)
         signInWithGithub()
             .then(result => {
                 const user = result.user;
-                setUser(user)
+                setUser(user);
+                setIsLoading(false)
                 history.push(redirect_url)
             }).catch(error => {
                 const errorMessage = error.message;
+                setIsLoading(false)
                 setError(errorMessage)
             })
     }
 
     const signInMethods = e => {
+        setIsLoading(true)
         e.preventDefault();
         handleLogin()
             .then(result => {
+                setIsLoading(false)
                 history.push(redirect_url)
             }).catch(error => {
+                setIsLoading(false)
                 const errorMessage = error.message;
+
+                console.log(errorMessage)
+
                 const notFound = errorMessage.slice(22, 36);
                 const wrongPassword = errorMessage.slice(22, 36);
                 const invalid = errorMessage.slice(22, 35);
@@ -52,7 +65,6 @@ const SignIn = () => {
                 if (wrongPassword === "wrong-password") {
                     return setError('Wrong password')
                 }
-                console.log(wrongPassword)
             })
 
     }

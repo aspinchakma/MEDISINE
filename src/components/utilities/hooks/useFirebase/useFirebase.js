@@ -19,6 +19,8 @@ const useFirebase = () => {
     const [passwordError, setPasswordError] = useState('');
     const [userEmail, setUserEmail] = useState('');
 
+    const [isLoading, setIsLoading] = useState(true);
+
 
 
     useEffect(() => {
@@ -52,13 +54,17 @@ const useFirebase = () => {
 
     }
     // Observer :
-    onAuthStateChanged(auth, user => {
-        if (user) {
-            setUser(user)
-        } else {
-
-        }
-    })
+    useEffect(() => {
+        const unsubscribed = onAuthStateChanged(auth, user => {
+            if (user) {
+                setUser(user)
+            } else {
+                setUser({})
+            }
+            setIsLoading(false)
+        })
+        return () => unsubscribed;
+    }, [])
     // sign in with github :
     const signInWithGithub = () => {
         return signInWithPopup(auth, githubProvider);
@@ -66,13 +72,14 @@ const useFirebase = () => {
     }
     // log out :
     const logOut = () => {
+        setIsLoading(true)
         signOut(auth)
             .then(() => {
                 setUser({})
             }).catch(error => {
                 const errorMessage = error.message;
                 setError(errorMessage)
-            })
+            }).finally(setIsLoading(false))
     }
     const getUserName = e => {
         const userName = e.target.value;
@@ -165,7 +172,9 @@ const useFirebase = () => {
         setUserName,
         setUserEmail,
         setUserConfirmPassword,
-        setUserPassword
+        setUserPassword,
+        setIsLoading,
+        isLoading,
     }
 }
 export default useFirebase;
