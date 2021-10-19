@@ -29,7 +29,7 @@ const useFirebase = () => {
             .then(result => setProducts(result))
     }, [])
     useEffect(() => {
-        fetch('./blogs.json')
+        fetch('/blogs.json')
             .then(response => response.json())
             .then(result => setBlogs(result))
     }, [])
