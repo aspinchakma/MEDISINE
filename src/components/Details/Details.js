@@ -39,7 +39,7 @@ const Details = () => {
                             <h2><button className="sign-methods " onClick={decreaseQuantity}>-</button> <span>{quantity > 9 ? quantity : `0 ${quantity}`}</span> <button className="sign-methods"
                                 onClick={increaseQuantity}
                             >+</button></h2>
-                            <button onClick={() => addToDb(quantity, product.name)} className="add-to-cart-button"><i class="fas fa-cart-plus"></i> ADD TO CART</button>
+                            <button onClick={() => addToDb(quantity, product.name)} className="add-to-cart-button"><i className="fas fa-cart-plus"></i> ADD TO CART</button>
                         </div>
                     </div>
                 </div> :
