@@ -1,10 +1,11 @@
 import React from 'react';
 import './Product.css';
 import Rating from '@mui/material/Rating';
+import { Link } from 'react-router-dom';
 
 
 const Product = ({ product }) => {
-    const { img, name, price, rating, productType } = product;
+    const { img, name, price, rating, productType, id } = product;
     return (
         <div className="col">
             <div className="card product-container px-4 py-3">
@@ -14,7 +15,7 @@ const Product = ({ product }) => {
                     <h5 className="product-name">{name}</h5>
                     <p className="rating"><Rating name="read-only" value={rating} readOnly /></p>
                     <p className="product-price">${price}</p>
-                    <button className="see-more-button mb-2">See More</button>
+                    <Link to={`/details/${id}`}> <button className="see-more-button mb-2">See More</button></Link>
                 </div>
 
 

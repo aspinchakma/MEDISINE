@@ -16,11 +16,12 @@ const useFirebase = () => {
     const [userPassword, setUserPassword] = useState('');
     const [userConfirmPassword, setUserConfirmPassword] = useState('');
     const [passwordError, setPasswordError] = useState('');
-    const [userEmail, setUserEmail] = useState('')
+    const [userEmail, setUserEmail] = useState('');
+
 
 
     useEffect(() => {
-        fetch('./products.json')
+        fetch('/products.json')
             .then(response => response.json())
             .then(result => setProducts(result))
     }, [])
@@ -178,7 +179,11 @@ const useFirebase = () => {
                 }
             })
     }
+    // increase quantity 
 
+    const addToDb = (quantity, productName) => {
+        alert(`${quantity} items ${productName} added successfully. Thank You!`)
+    }
 
     return {
         products,
@@ -194,7 +199,8 @@ const useFirebase = () => {
         passwordError,
         handleSignIn,
         error,
-        handleLogin
+        handleLogin,
+        addToDb
     }
 }
 export default useFirebase;

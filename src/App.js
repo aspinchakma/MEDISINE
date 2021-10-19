@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Footer from './components/Common/Footer/Footer';
 import Header from './components/Common/Header/Header';
+import Details from './components/Details/Details';
 import HomeContainer from './components/Home/HomeContainer/HomeContainer';
 import NotFound from './components/NotFound/NotFound'
 import SignIn from './components/SignIn/SignIn';
@@ -25,6 +26,9 @@ function App() {
             </Route>
             <Route path="/signIn">
               <SignIn></SignIn>
+            </Route>
+            <Route path="/details/:productId">
+              <Details></Details>
             </Route>
             <Route path="*">
               <NotFound></NotFound>
