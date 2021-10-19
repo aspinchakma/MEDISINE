@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import About from './components/About/About';
 import BlogPage from './components/BlogPage/BlogPage';
 import Footer from './components/Common/Footer/Footer';
 import Header from './components/Common/Header/Header';
@@ -33,6 +34,9 @@ function App() {
             </Route>
             <Route path="/blogs">
               <BlogPage></BlogPage>
+            </Route>
+            <Route path="/about">
+              <About></About>
             </Route>
             <Route path="*">
               <NotFound></NotFound>

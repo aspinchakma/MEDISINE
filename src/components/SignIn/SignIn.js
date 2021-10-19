@@ -4,7 +4,7 @@ import useAuth from '../utilities/hooks/useAuth/useAuth';
 import './SignIn.css';
 
 const SignIn = () => {
-    const { signInWithGoogle, signInWithGithub, error, getUserEmail, getUserPassword, handleLogin } = useAuth();
+    const { signInWithGoogle, signInWithGithub, error, getUserEmail, getUserPassword, handleLogin, forgetPassword } = useAuth();
     return (
         <div className="container mt-5 pb-5">
             <h3 className="text-center common-header-form">SIGN IN</h3>
@@ -19,8 +19,8 @@ const SignIn = () => {
                         <p className="error-password-Message mb-1">{error}</p>
                         <button onClick={handleLogin} type="submit" className="mb-4">Sign In</button>
                         <div className="sign-in-mini-container">
-                            <Link to="/signIn" className="have-account"><p >You have an account?</p></Link>
-                            <p className="have-account">Forgotten password</p>
+                            <Link to="/signUp" className="have-account"><p >New user?</p></Link>
+                            <p onClick={forgetPassword} className="have-account">Forgotten password</p>
                         </div>
                     </form>
                     <p className="or">OR</p>

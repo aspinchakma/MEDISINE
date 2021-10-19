@@ -15,6 +15,7 @@ const HomeContainer = () => {
             <Offer></Offer>
             <Products></Products>
             <Blogs></Blogs>
+            <h2 className="text-center py-3">Meet Our Team</h2>
             <OurTeam></OurTeam>
             <Others></Others>
             <Subscribe></Subscribe>

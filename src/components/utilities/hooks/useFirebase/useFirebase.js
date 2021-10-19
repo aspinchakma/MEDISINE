@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import initializeAuthentication from "../../firebase/firebase.init";
 import {
     getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, GithubAuthProvider, signOut,
-    createUserWithEmailAndPassword, updateProfile, sendEmailVerification, signInWithEmailAndPassword
+    createUserWithEmailAndPassword, updateProfile, sendEmailVerification, signInWithEmailAndPassword,
+    sendPasswordResetEmail
 } from "firebase/auth";
 
 
@@ -166,17 +167,31 @@ const useFirebase = () => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, userEmail, userPassword)
             .then(result => {
-
             }).catch(error => {
                 const errorMessage = error.message;
                 const notFound = errorMessage.slice(22, 36);
+                const wrongPassword = errorMessage.slice(22, 36);
                 const invalid = errorMessage.slice(22, 35);
                 if (notFound === "user-not-found") {
-                    setError("User not found")
+                    return setError("User not found")
                 }
                 if (invalid === "invalid-email") {
-                    setError("Write valid email address")
+                    return setError("Write valid email address")
                 }
+                if (wrongPassword === "wrong-password") {
+                    return setError('Wrong password')
+                }
+                console.log(wrongPassword)
+            })
+    }
+    const forgetPassword = () => {
+        sendPasswordResetEmail(auth, userEmail)
+            .then(() => {
+                setError("Send reset password email")
+            })
+            .catch(error => {
+                const errorMessage = error.message;
+                setError(errorMessage)
             })
     }
     // increase quantity 
@@ -201,7 +216,8 @@ const useFirebase = () => {
         error,
         handleLogin,
         addToDb,
-        blogs
+        blogs,
+        forgetPassword
     }
 }
 export default useFirebase;
