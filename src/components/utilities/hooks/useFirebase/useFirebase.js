@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import initializeAuthentication from "../../firebase/firebase.init";
 import {
     getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, GithubAuthProvider, signOut,
-    createUserWithEmailAndPassword, updateProfile, sendEmailVerification, signInWithEmailAndPassword,
+    createUserWithEmailAndPassword, signInWithEmailAndPassword,
     sendPasswordResetEmail
 } from "firebase/auth";
 
@@ -48,15 +48,8 @@ const useFirebase = () => {
 
     // sign in with google
     const signInWithGoogle = () => {
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                const user = result.user;
-                setUser(user)
+        return signInWithPopup(auth, googleProvider);
 
-            }).catch(error => {
-                const errorMessage = error.message;
-                setError(errorMessage)
-            })
     }
     // Observer :
     onAuthStateChanged(auth, user => {
@@ -68,14 +61,8 @@ const useFirebase = () => {
     })
     // sign in with github :
     const signInWithGithub = () => {
-        signInWithPopup(auth, githubProvider)
-            .then(result => {
-                const user = result.user;
-                setUser(user)
-            }).catch(error => {
-                const errorMessage = error.message;
-                setError(errorMessage)
-            })
+        return signInWithPopup(auth, githubProvider);
+
     }
     // log out :
     const logOut = () => {
@@ -120,8 +107,8 @@ const useFirebase = () => {
         const confirmPassword = e.target.value;
         setUserConfirmPassword(confirmPassword)
     }
-    const handleSignIn = e => {
-        e.preventDefault()
+    const handleSignUp = () => {
+
         if (userPassword !== userConfirmPassword) {
             return setError('Please match your password')
         }
@@ -129,60 +116,13 @@ const useFirebase = () => {
             return setError('Please write your full name')
         }
 
-        createUserWithEmailAndPassword(auth, userEmail, userPassword)
-            .then(result => {
+        return createUserWithEmailAndPassword(auth, userEmail, userPassword);
 
-
-                updateProfile(auth.currentUser, {
-                    displayName: userName
-                }).then(() => {
-
-                }).catch(error => {
-
-                })
-                sendEmailVerification(auth.currentUser)
-                    .then(() => {
-                        setUserName('');
-                        setUserEmail('');
-                        setUserPassword('')
-                        setError('');
-                        setUserConfirmPassword('')
-                    })
-
-            })
-            .catch(error => {
-                const errorMessage = error.message;
-                const exist = errorMessage.slice(24, 42);
-                const invalid = errorMessage.slice(22, 35);
-
-                if (exist === 'ail-already-in-use') {
-                    return setError("Email already in use")
-                }
-                if (invalid === "invalid-email") {
-                    return setError('Please write valid email')
-                }
-            })
     }
-    const handleLogin = e => {
-        e.preventDefault();
-        signInWithEmailAndPassword(auth, userEmail, userPassword)
-            .then(result => {
-            }).catch(error => {
-                const errorMessage = error.message;
-                const notFound = errorMessage.slice(22, 36);
-                const wrongPassword = errorMessage.slice(22, 36);
-                const invalid = errorMessage.slice(22, 35);
-                if (notFound === "user-not-found") {
-                    return setError("User not found")
-                }
-                if (invalid === "invalid-email") {
-                    return setError("Write valid email address")
-                }
-                if (wrongPassword === "wrong-password") {
-                    return setError('Wrong password')
-                }
-                console.log(wrongPassword)
-            })
+    const handleLogin = () => {
+
+        return signInWithEmailAndPassword(auth, userEmail, userPassword);
+
     }
     const forgetPassword = () => {
         sendPasswordResetEmail(auth, userEmail)
@@ -212,12 +152,20 @@ const useFirebase = () => {
         getUserEmail,
         getUserPassword,
         passwordError,
-        handleSignIn,
+        handleSignUp,
         error,
         handleLogin,
         addToDb,
         blogs,
-        forgetPassword
+        forgetPassword,
+        setUser,
+        setError,
+        auth,
+        userName,
+        setUserName,
+        setUserEmail,
+        setUserConfirmPassword,
+        setUserPassword
     }
 }
 export default useFirebase;

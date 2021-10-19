@@ -9,7 +9,7 @@ const NotFound = () => {
 
             </div>
             <div className="col-lg-6 my-5">
-                <h1>4<sapn>0</sapn>4</h1>
+                <h1>4<span>0</span>4</h1>
                 <p>The page you are looking for might have been removed had its name changed or is temporarily unavailable.</p>
                 <Link to="/home"><button className="back-to-home mt-4">HOME</button></Link>
             </div>

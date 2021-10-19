@@ -9,6 +9,7 @@ import NotFound from './components/NotFound/NotFound'
 import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignUp/SignUp';
 import AuthProvider from './components/utilities/AuthProvider/AuthProvider';
+import PrivateRoute from './components/utilities/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -29,9 +30,9 @@ function App() {
             <Route path="/signIn">
               <SignIn></SignIn>
             </Route>
-            <Route path="/details/:productId">
+            <PrivateRoute path="/details/:productId">
               <Details></Details>
-            </Route>
+            </PrivateRoute>
             <Route path="/blogs">
               <BlogPage></BlogPage>
             </Route>
