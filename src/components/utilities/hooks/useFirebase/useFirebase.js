@@ -200,7 +200,8 @@ const useFirebase = () => {
         handleSignIn,
         error,
         handleLogin,
-        addToDb
+        addToDb,
+        blogs
     }
 }
 export default useFirebase;
