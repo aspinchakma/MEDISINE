@@ -48,6 +48,7 @@ const SignUp = () => {
                 if (invalid === "invalid-email") {
                     return setError('Please write valid email')
                 }
+                setError(errorMessage?.slice(0, 40))
             })
 
     }

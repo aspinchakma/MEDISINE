@@ -51,8 +51,6 @@ const SignIn = () => {
                 setIsLoading(false)
                 const errorMessage = error.message;
 
-                console.log(errorMessage)
-
                 const notFound = errorMessage.slice(22, 36);
                 const wrongPassword = errorMessage.slice(22, 36);
                 const invalid = errorMessage.slice(22, 35);
@@ -65,6 +63,7 @@ const SignIn = () => {
                 if (wrongPassword === "wrong-password") {
                     return setError('Wrong password')
                 }
+                setError(errorMessage?.slice(0, 40))
             })
 
     }
